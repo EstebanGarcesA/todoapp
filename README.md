@@ -1,59 +1,102 @@
-# Todoapp
+# TodoApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+Aplicación de gestión de tareas (To-Do List) desarrollada con [Angular 20](https://angular.dev/). Permite crear, editar, eliminar y filtrar tareas, con persistencia local y una interfaz moderna.
 
-## Development server
+## Características principales
 
-To start a local development server, run:
+- **Añadir tareas:** Escribe y presiona Enter para agregar una nueva tarea.
+- **Editar tareas:** Haz doble clic sobre una tarea para editar su texto.
+- **Completar tareas:** Marca/desmarca tareas como completadas.
+- **Eliminar tareas:** Borra tareas individualmente.
+- **Filtrado:** Visualiza todas, solo pendientes o solo completadas.
+- **Persistencia:** Las tareas se guardan automáticamente en el navegador (`localStorage`).
+- **Interfaz responsiva:** Adaptada para escritorio y móvil.
+- **Angular Signals:** Uso de signals y computed para gestión reactiva del estado.
+- **Formulario reactivo:** Validación y control de entrada con `FormControl`.
 
-```bash
-ng serve
+## Estructura del proyecto
+
+```
+todoapp/
+├── src/
+│   ├── app/
+│   │   ├── models/
+│   │   │   └── task.model.ts
+│   │   ├── pages/
+│   │   │   └── home/
+│   │   │       ├── home.ts
+│   │   │       ├── home.html
+│   │   │       └── home.css
+│   │   ├── app.ts
+│   │   ├── app.html
+│   │   ├── app.config.ts
+│   │   └── app.routes.ts
+│   ├── main.ts
+│   ├── styles.css
+│   └── index.html
+├── public/
+│   ├── index.html
+│   └── 404.html
+├── firebase.json
+├── package.json
+└── README.md
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tecnologías utilizadas
 
-## Code scaffolding
+- **Angular 20** (standalone components, signals, computed, effect)
+- **TypeScript**
+- **Reactive Forms**
+- **LocalStorage** para persistencia
+- **CSS** para estilos personalizados
+- **Firebase Hosting** (opcional, ver `firebase.json`)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación y ejecución
 
+1. **Clona el repositorio:**
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd todoapp
+   ```
+
+2. **Instala las dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Inicia el servidor de desarrollo:**
+   ```bash
+   npm start
+   ```
+   Accede a [http://localhost:4200](http://localhost:4200) en tu navegador.
+
+## Scripts disponibles
+
+- `npm start` — Inicia el servidor de desarrollo.
+- `npm run build` — Compila la aplicación para producción en `dist/`.
+- `npm test` — Ejecuta los tests unitarios.
+
+## Personalización
+
+- **Agregar nuevas páginas:** Crea una carpeta en `src/app/pages/` y añade tu componente standalone.
+- **Modificar el modelo de tarea:** Edita `src/app/models/task.model.ts` para añadir campos (por ejemplo, fecha límite, prioridad).
+- **Cambiar estilos:** Edita `src/app/pages/home/home.css` o `src/styles.css`.
+
+## Despliegue
+
+La configuración para Firebase Hosting está en `firebase.json`. Para desplegar, primero compila el proyecto:
 ```bash
-ng generate component component-name
+npm run build
 ```
+Luego sigue la documentación de [Firebase Hosting](https://firebase.google.com/docs/hosting).
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## Recursos útiles
 
-## Building
+- [Angular Signals](https://angular.dev/reference/signals)
+- [Angular Standalone Components](https://angular.dev/guide/standalone-components)
+- [Angular Forms](https://angular.dev/guide/forms-overview)
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
 
-To build the project run:
+---
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
