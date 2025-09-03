@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
   standalone: true,
-  imports: [RouterModule, CommonModule, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule],
   templateUrl: './labs.html',
   styleUrl: './labs.css'
 })
@@ -26,7 +26,7 @@ welcome = 'Bienvenido a mi primera aplicación con Angular';
   img = 'https://w3schools.com/howto/img_avatar.png'
 
   person = signal({
-    name: 'nicolas',
+    name: 'Nicolas',
     age: 19,
     avatar: 'https://w3schools.com/howto/img_avatar.png'
   });

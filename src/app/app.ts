@@ -1,10 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterModule], // <-- Aquí
+  imports: [RouterModule], // <-- Aquí
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
